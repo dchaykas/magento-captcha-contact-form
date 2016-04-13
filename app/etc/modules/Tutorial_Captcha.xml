@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Tutorial_Captcha>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Tutorial_Captcha>
+    </modules>
+</config>

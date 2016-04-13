@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Tutorial_Captcha>
+            <version>0.1.0</version>
+        </Tutorial_Captcha>
+    </modules>
+    <default>
+        <captcha>
+            <frontend>
+                <areas>
+                    <contact_page_captcha>
+                        <label>Contact Page</label>
+                    </contact_page_captcha>
+                </areas>
+            </frontend>
+        </captcha>
+    </default>
+    <global>
+        <blocks>
+            <captcha>
+                <rewrite>
+                    <captcha_zend>Tutorial_Captcha_Block_Captcha_Zend</captcha_zend>
+                </rewrite>
+            </captcha>
+        </blocks>
+        <events>
+            <controller_action_predispatch_contacts_index_post>
+                <observers>
+                    <captcha>
+                        <type>model</type>
+                        <class>tutorial_captcha/observer</class>
+                        <method>checkContactPage</method>
+                    </captcha>
+                </observers>
+            </controller_action_predispatch_contacts_index_post>
+        </events>
+    </global>
+</config>
